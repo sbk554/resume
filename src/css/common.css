@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/* ==========================================================================
+   common.css — 스타일 가이드 정의 (Design System: Backend Portfolio)
+   토큰 이름 = Figma 스타일 이름 = 클래스 이름  (예: body-medium → .body-medium)
+   폰트: Pretendard Variable (index.html 에서 로드)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Tokens
+   ========================================================================== */
+:root {
+  /* Color : Brand */
+  --color-primary: #141414;
+  --color-on-primary: #ffffff;
+  --color-accent: #0066ff;            /* 포인트 컬러: primary 버튼, eyebrow, 활성 탭, 배지 */
+  --color-accent-hover: #0052cc;
+  --color-accent-soft: #ebf3ff;       /* 연한 포인트 배경 */
+
+  /* Color : Surface */
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #f3f3f3;
+  --color-field: #f0f0f0;
+  --color-hairline-soft: #f0f0f0;
+  --color-hairline: #e0e0e0;
+  --color-overlay: rgba(115, 115, 115, 0.56);
+  --color-dim: rgba(20, 20, 20, 0.4);
+
+  /* Color : Text */
+  --color-ink: #141414;
+  --color-ink-soft: #262626;
+  --color-text-muted: #707070;
+  --color-text-faint: #adadad;
+
+  /* Font */
+  --font-family: "Pretendard Variable", Pretendard, Inter, -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", "Apple SD Gothic Neo", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --fw-light: 300;
+  --fw-regular: 456;
+  --fw-semibold: 600;
+  --fw-bold: 652;
+
+  /* Type scale (Desktop) */
+  --fs-display-large: 80px;   --lh-display-large: 1.1;
+  --fs-heading-xlarge: 56px;  --lh-heading-xlarge: 1.12;
+  --fs-heading-large: 44px;   --lh-heading-large: 1.2;
+  --fs-heading-medium: 32px;  --lh-heading-medium: 1.25;
+  --fs-heading-small: 24px;   --lh-heading-small: 1.33;
+  --fs-title-medium: 20px;    --lh-title-medium: 1.4;
+  --fs-body-large: 20px;      --lh-body-large: 1.5;
+  --fs-body-medium: 16px;     --lh-body-medium: 1.6;
+  --fs-body-small: 14px;      --lh-body-small: 1.57;
+  --fs-label-large: 16px;     --lh-label-large: 1.38;
+  --fs-label-medium: 14px;    --lh-label-medium: 1.43;
+  --fs-label-small: 12px;     --lh-label-small: 1.33;
+  --fs-caption: 12px;         --lh-caption: 1.5;
+
+  /* Spacing */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-section: 80px;
+  --space-section-lg: 120px;
+
+  /* Radius */
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-full: 9999px;
+  --radius-squircle: 30%;
+
+  /* Button */
+  --btn-large-h: 56px;   --btn-large-px: 28px;
+  --btn-medium-h: 44px;  --btn-medium-px: 20px;
+  --btn-small-h: 36px;   --btn-small-px: 16px;
+  --btn-xsmall-h: 28px;  --btn-xsmall-px: 12px;
+
+  /* Icon tile */
+  --icon-small: 32px;
+  --icon-medium: 48px;
+  --icon-large: 64px;
+
+  /* Layout */
+  --container-max: 1200px;
+  --gutter: 24px;
+  --header-h: 56px;
+  --header-top: 16px;
+
+  /* Motion / Elevation */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --shadow-toggle: 0 1px 3px rgba(20, 20, 20, 0.08);  /* 세그먼트 활성 탭 전용 */
+  --focus-ring: 0 0 0 2px var(--color-ink);
+}
+
+/* Responsive tokens — breakpoint: lg 1024 / md 768 */
+@media (max-width: 1024px) {
+  :root {
+    --fs-display-large: 64px;
+    --fs-heading-xlarge: 48px;
+    --fs-heading-large: 36px;
+    --space-section: 64px;
+    --space-section-lg: 96px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --fs-display-large: 44px;
+    --fs-heading-xlarge: 36px;
+    --fs-heading-large: 30px;
+    --fs-heading-medium: 26px;
+    --fs-heading-small: 20px;
+    --fs-title-medium: 18px;
+    --fs-body-large: 17px;
+    --space-section: 56px;
+    --space-section-lg: 72px;
+    --gutter: 16px;
+    --header-h: 52px;
+    --header-top: 12px;
+    --radius-md: 20px;
+  }
+}
+
+/* ==========================================================================
+   2. Base
+   ========================================================================== */
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--header-top) * 2); }
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-body-medium);
+  line-height: var(--lh-body-medium);
+  font-weight: var(--fw-regular);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  word-break: keep-all;
+}
+::selection { background: var(--color-accent-soft); color: var(--color-ink); }
+:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 4px; }
+.blind { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ==========================================================================
+   3. Typography
+   ========================================================================== */
+.display-large  { font-size: var(--fs-display-large);  line-height: var(--lh-display-large);  font-weight: var(--fw-bold); }
+.heading-xlarge { font-size: var(--fs-heading-xlarge); line-height: var(--lh-heading-xlarge); font-weight: var(--fw-bold); }
+.heading-large  { font-size: var(--fs-heading-large);  line-height: var(--lh-heading-large);  font-weight: var(--fw-bold); }
+.heading-medium { font-size: var(--fs-heading-medium); line-height: var(--lh-heading-medium); font-weight: var(--fw-bold); }
+.heading-small  { font-size: var(--fs-heading-small);  line-height: var(--lh-heading-small);  font-weight: var(--fw-bold); }
+.title-medium   { font-size: var(--fs-title-medium);   line-height: var(--lh-title-medium);   font-weight: var(--fw-semibold); }
+.body-large     { font-size: var(--fs-body-large);     line-height: var(--lh-body-large);     font-weight: var(--fw-light); }
+.body-medium    { font-size: var(--fs-body-medium);    line-height: var(--lh-body-medium);    font-weight: var(--fw-regular); }
+.body-small     { font-size: var(--fs-body-small);     line-height: var(--lh-body-small);     font-weight: var(--fw-regular); }
+.label-large    { font-size: var(--fs-label-large);    line-height: var(--lh-label-large);    font-weight: var(--fw-semibold); }
+.label-medium   { font-size: var(--fs-label-medium);   line-height: var(--lh-label-medium);   font-weight: var(--fw-semibold); }
+.label-small    { font-size: var(--fs-label-small);    line-height: var(--lh-label-small);    font-weight: var(--fw-semibold); }
+.caption        { font-size: var(--fs-caption);        line-height: var(--lh-caption);        font-weight: var(--fw-regular); }
+.mono           { font-family: var(--font-mono); }
+
+.text-ink        { color: var(--color-ink); }
+.text-muted      { color: var(--color-text-muted); }
+.text-faint      { color: var(--color-text-faint); }
+.text-accent     { color: var(--color-accent); }
+.text-on-primary { color: var(--color-on-primary); }
+
+/* ==========================================================================
+   4. Guide components
+   ========================================================================== */
+
+/* Button — 모두 stadium pill */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+  height: var(--btn-medium-h); padding: 0 var(--btn-medium-px);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-label-large); line-height: 1; font-weight: var(--fw-semibold);
+  white-space: nowrap;
+  transition: background-color var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease);
+}
+.btn--large  { height: var(--btn-large-h);  padding: 0 var(--btn-large-px); }
+.btn--small  { height: var(--btn-small-h);  padding: 0 var(--btn-small-px);  font-size: var(--fs-label-medium); }
+.btn--xsmall { height: var(--btn-xsmall-h); padding: 0 var(--btn-xsmall-px); font-size: var(--fs-label-small); }
+.btn--block  { width: 100%; }
+
+.btn--primary { background: var(--color-accent); color: var(--color-on-primary); }
+.btn--primary:hover { background: var(--color-accent-hover); }
+.btn--dark { background: var(--color-primary); color: var(--color-on-primary); }
+.btn--dark:hover { background: var(--color-ink-soft); }
+.btn--outline { background: var(--color-canvas); color: var(--color-ink); border: 1px solid var(--color-hairline); }
+.btn--outline:hover { background: var(--color-canvas-soft); }
+.btn--soft { background: var(--color-canvas-soft); color: var(--color-ink); }
+.btn--soft:hover { background: var(--color-hairline); }
+.btn--inverse { background: var(--color-canvas); color: var(--color-ink); }
+.btn--inverse:hover { background: var(--color-canvas-soft); }
+.btn:disabled, .btn.is-disabled { background: var(--color-canvas-soft); color: var(--color-text-faint); border-color: transparent; pointer-events: none; }
+
+.btn-icon {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: var(--btn-medium-h); height: var(--btn-medium-h);
+  border-radius: var(--radius-full); background: var(--color-canvas);
+  transition: background-color var(--duration-fast) var(--ease);
+}
+.btn-icon:hover { background: var(--color-hairline); }
+.btn-icon--dark { background: var(--color-primary); color: var(--color-on-primary); }
+.btn-icon--dark:hover { background: var(--color-ink-soft); }
+
+/* Badge */
+.badge {
+  display: inline-flex; align-items: center; gap: var(--space-xxs); flex-shrink: 0;
+  height: 24px; padding: 0 10px; border-radius: var(--radius-full);
+  font-size: var(--fs-label-small); line-height: 1; font-weight: var(--fw-semibold);
+  background: var(--color-canvas-soft); color: var(--color-ink);
+}
+.badge--accent  { background: var(--color-accent); color: var(--color-on-primary); }
+.badge--overlay { background: var(--color-overlay); color: var(--color-on-primary); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.badge--outline { background: transparent; border: 1px solid var(--color-hairline); color: var(--color-text-muted); }
+
+/* Chip (기술 키워드) */
+.chip-list { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: var(--btn-small-h); padding: 0 14px; border-radius: var(--radius-full);
+  background: var(--color-canvas-soft);
+  font-size: var(--fs-label-medium); font-weight: var(--fw-semibold); color: var(--color-ink); white-space: nowrap;
+}
+.chip--dark { background: var(--color-primary); color: var(--color-on-primary); }
+.card--soft .chip { background: var(--color-canvas); }   /* 틴트 카드 위에서는 흰 칩 */
+
+/* Icon tile (squircle) */
+.icon-tile {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: var(--icon-medium); height: var(--icon-medium);
+  border-radius: var(--radius-squircle); background: var(--color-canvas-soft); overflow: hidden;
+  font-size: var(--fs-label-small); font-weight: var(--fw-semibold); color: var(--color-text-muted);
+}
+.icon-tile img { width: 60%; height: 60%; object-fit: contain; }
+.icon-tile--small { width: var(--icon-small); height: var(--icon-small); }
+.icon-tile--large { width: var(--icon-large); height: var(--icon-large); }
+
+/* Card */
+.card { background: var(--color-canvas); border: 1px solid var(--color-hairline-soft); border-radius: var(--radius-md); padding: var(--space-lg); }
+.card--soft { background: var(--color-canvas-soft); border-color: transparent; }
+.card--sm { border-radius: var(--radius-sm); }
+
+/* Segmented control */
+.segmented { display: inline-flex; padding: var(--space-xxs); border-radius: var(--radius-full); background: var(--color-canvas-soft); max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.segmented::-webkit-scrollbar { display: none; }
+.segmented__item {
+  flex-shrink: 0; height: var(--btn-small-h); padding: 0 var(--btn-small-px); border-radius: var(--radius-full);
+  font-size: var(--fs-label-medium); font-weight: var(--fw-semibold); color: var(--color-text-muted);
+  transition: color var(--duration-fast) var(--ease), background-color var(--duration-fast) var(--ease);
+}
+.segmented__item:hover { color: var(--color-ink); }
+.segmented__item.is-active { background: var(--color-canvas); color: var(--color-accent); box-shadow: var(--shadow-toggle); }
+
+/* Input */
+.input { width: 100%; height: var(--btn-medium-h); padding: var(--space-sm) var(--space-md); border: 0; border-radius: var(--radius-sm); background: var(--color-field); font-size: var(--fs-body-medium); }
+.input::placeholder { color: var(--color-text-faint); }
+.input:focus { outline: none; box-shadow: var(--focus-ring); }
+
+/* Layout primitives */
+.container { width: 100%; max-width: calc(var(--container-max) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
