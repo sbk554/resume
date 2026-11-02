@@ -19,7 +19,7 @@ export const skills = [
   { name: 'Node.js', short: 'Node', icon: logos.nodejs, category: 'language', desc: 'TODO: 숙련도 설명' },
   { name: 'PHP', short: 'php', icon: logos.php, category: 'language', desc: 'TODO: EC2, RDS, S3 배포 경험' },
   { name: 'JavaScript', short: 'Js', icon: logos.javascript, category: 'language', desc: 'TODO: EC2, RDS, S3 배포 경험' },
-  { name: 'Java Spring', short: 'Java Sprin', icon: logos.spring, category: 'framework', desc: 'TODO: REST API, Security, 트랜잭션 관리' },
+  { name: 'Java Spring', short: 'Java Sprin', icon: logos.javaspring, category: 'framework', desc: 'TODO: REST API, Security, 트랜잭션 관리' },
   { name: 'ORACLE', short: 'ORACLE', icon: logos.oracle, category: 'data', desc: 'TODO: N+1 해결, 동적 쿼리' },
   { name: 'MySQL', short: 'MySQL', icon: logos.mysql, category: 'data', desc: 'TODO: 인덱스 설계, 실행계획 분석' },
   { name: 'Linux', short: 'Linux', icon: logos.linux, category: 'data', desc: 'TODO: 캐시 전략, 분산 락' },
