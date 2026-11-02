@@ -22,7 +22,7 @@ export const projects = [
     title: '영진건설기술교육원',
     summary: '교육 수강신청 시스템 백엔드 전반 개발',
     period: '2024.11.25 ~ 현재(유지보수중)',
-    team: '2명(프론트 1명 ,백엔드 1명)',
+    team: '2명(퍼블 1명, 풀스텍 1명)',
     thumbnail: logos.yeongjin, // TODO: 카드 썸네일 (16:10)
     tech: ['Java', 'Java Spring', 'MS-SQL'],
     detail: {
@@ -30,7 +30,7 @@ export const projects = [
       cover: '', // TODO: 상세 대표 이미지 / GIF
       role: '백엔드 리드',
       // members: 'BE TODO · FE TODO',
-      members: '2명(프론트 1명 ,백엔드 1명)',
+      members: '2명(퍼블 1명, 풀스텍 1명)',
       contribution: '100%',
       links: [
         { label: '시연 영상', url: '' }, // TODO: 없으면 빈 문자열 → 숨김
@@ -80,7 +80,7 @@ export const projects = [
     url: 'https://mmate.flash21.com',
     summary: '기존 솔루션 유지보수 및 고도화 작업 지속 수행',
     period: '2022.11 ~ 2024.10',
-    team: '6명(프론트 1명 ,백엔드 5명)',
+    team: '7명(퍼플 2명 ,프론트 3명 ,백엔드 1명 ,풀스텍 1명)',
     thumbnail: logos.mmate,
     tech: ['JAVA', 'Java Spring', 'ORACLE'],
     detail: {
@@ -88,7 +88,7 @@ export const projects = [
       cover: '', // TODO: 상세 대표 이미지 / GIF
       role: '백엔드 리드',
       // members: 'BE TODO · FE TODO',
-      members: '6명(프론트 1명 ,백엔드 5명)',
+      members: '7명(퍼플 2명 ,프론트 3명 ,백엔드 1명 ,풀스텍 1명)',
       contribution: '80%',
       links: [
         { label: '시연 영상', url: '' }, // TODO: 없으면 빈 문자열 → 숨김
@@ -137,7 +137,7 @@ export const projects = [
     url: 'https://ggsec.gg.go.kr/index',
     summary: '사용자 예약 편의를 위한 체험 예약 기능 개발',
     period: '2023.01 ~ 2023.03',
-    team: '7명(프론트 3명 ,백엔드 4명)',
+    team: '7명(퍼블 2명, 프론트 1명 ,풀스택 4명)',
     thumbnail: logos.safety,
     tech: ['Java', 'Java Spring', 'MYSQL', '전자정부프레임워크'],
     detail: {
@@ -145,7 +145,7 @@ export const projects = [
       cover: '', // TODO: 상세 대표 이미지 / GIF
       role: '백엔드 리드',
       // members: 'BE TODO · FE TODO',
-      members: '6명(프론트 1명 ,백엔드 5명)',
+      members: '7명(퍼블 2명, 프론트 1명 ,풀스택 4명)',
       contribution: '20%',
       links: [
         { label: '시연 영상', url: '' }, // TODO: 없으면 빈 문자열 → 숨김
@@ -195,7 +195,7 @@ export const projects = [
     url: 'https://kirasys.kr/',
     summary: '건축사 업무 처리를 위한 내부 시스템 백엔드 개발 참여',
     period: '2023.07 ~ 2023.10',
-    team: '5명(프론트 1명 ,백엔드 4명)',
+    team: '6명(퍼블 2명 ,백엔드 1명 ,풀스택 3명)',
     thumbnail: logos.building,
     tech: ['JAVA', 'Java Spring', 'MySQL'],
     detail: {
@@ -244,61 +244,6 @@ export const projects = [
       retrospective: 'TODO: 배운 점과 다음에 개선할 점 (2~3문장)',
     },
   },
-  {
-    id: 'project-e',
-    org: '(주)플래시21',
-    featured: false,
-    title: 'ICG 2023',
-    url: '2023년까지 운영 후 현재는 서비스가 종료되었습니다.',
-    summary: '',
-    period: '2023.01 ~ 2023.12',
-    team: '3명(프론트 1명 ,백엔드 2명)',
-    thumbnail: '',
-    tech: ['JAVA', 'Java Spring', 'MySQL', '전자정부프레임워크'],
-    detail: {
-      description: 'TODO: 어떤 서비스의 어떤 문제를 풀었는지 한 줄',
-      cover: '', // TODO: 상세 대표 이미지 / GIF
-      role: '백엔드/서버 개발',
-      // members: 'BE TODO · FE TODO',
-      members: '3명(프론트 1명 ,백엔드 2명)',
-      contribution: '30%',
-      links: [
-        { label: '시연 영상', url: '' }, // TODO: 없으면 빈 문자열 → 숨김
-        { label: 'API 문서', url: '' },
-      ],
-      overview: [
-        'TODO: 배경 — 기존 시스템의 문제, 비즈니스 요구사항 (3~4문장)',
-        'TODO: 목표 — 정량 목표가 있다면 함께',
-      ],
-      techGroups: [
-        { label: 'Backend', items: ['Java 8', 'Java Spring', 'JSP'] },
-        { label: 'Data', items: ['MariaDB'] },
-        { label: 'Infra', items: ['Linux', 'SVN'] },
-      ],
-      // TODO: 아키텍처 이미지가 있으면 architectureImage 에 경로 → 아래 flow 대신 이미지 출력
-      architectureImage: '',
-      architecture: ['Client', 'Nginx', 'API Server ×2', ['ORACLE']],
-      roles: [
-        '웹 취약점 개선',
-      ],
-      troubles: [
-        {
-          title: 'TODO: 이슈 제목 (예: 주문 조회 N+1 쿼리)',
-          problem: 'TODO: 어떤 현상이 있었는지',
-          cause: 'TODO: 원인 분석 과정',
-          solution: 'TODO: 적용한 방법과 선택 이유',
-          result: 'TODO: before → after 수치',
-        },
-        { title: 'TODO: 이슈 제목 2', problem: 'TODO', cause: 'TODO', solution: 'TODO', result: 'TODO' },
-      ],
-      results: [
-        { value: 'TODO%', label: 'TODO: 평균 응답속도 개선' },
-        { value: 'TODO TPS', label: 'TODO: 부하 테스트 처리량' },
-        { value: 'TODO건', label: 'TODO: 장애 건수 / 비용 절감' },
-      ],
-      retrospective: 'TODO: 배운 점과 다음에 개선할 점 (2~3문장)',
-    },
-  },
 ];
 
 // ==========================================================================
@@ -306,9 +251,7 @@ export const projects = [
 // TODO: 필요한 만큼 추가 (최신순). tech·url 은 생략 가능
 // ==========================================================================
 export const tasks = [
-  { title: 'DNEX SW융합테크비즈센터', desc: '대관신청 수정, 관리자페이지 오류 수정 및 유지보수', period: '2023.05 ~ 2024.11', tech: ['JAVA', 'Java Spring', 'MySQL'] },
-  { title: 'TODO: 업무명 (예: 배치 스케줄러 실패 알림 연동)', desc: 'TODO: 한 줄 설명', period: 'TODO YYYY.MM', tech: ['Spring Batch', 'Slack API'] },
-  { title: 'TODO: 업무명 (예: 슬로우 쿼리 인덱스 튜닝)', desc: 'TODO: 한 줄 설명', period: 'TODO YYYY.MM', tech: ['MySQL'] },
-  { title: 'TODO: 업무명 (예: 레거시 API 응답 포맷 통일)', desc: 'TODO: 한 줄 설명', period: 'TODO YYYY.MM' },
-  { title: 'TODO: 업무명', desc: 'TODO: 한 줄 설명', period: 'TODO YYYY.MM', url: '' },
+  { title: 'DNEX SW융합테크비즈센터', desc: '대관신청 수정, 관리자페이지 오류 수정 및 유지보수', period: '2023.05 ~ 2024.10', tech: ['JAVA', 'Java Spring', 'MySQL'] },
+  { title: 'ICG 2023', desc: '공지사항 등록 및 웹취약점 수정', period: '2023.01 ~ 2023.12', tech: ['JAVA', 'Java Spring', 'MySQL'] },
+  { title: '경상북도문화관광공사', desc: '관리자페이지 개선 및 웹취약점 수정', period: '2023.09 ~ 2024.10', tech: ['JAVA', 'Java Spring', 'MySQL'] },
 ];
