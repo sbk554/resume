@@ -24,7 +24,7 @@ export const profile = {
 export const stats = [
   { value: '3년+', label: '백엔드 개발 경력' },
   { value: '4개', label: '운영한 서비스' },
-  { value: 'TODO', label: '세 번째 지표 (예: 진행 프로젝트 수)' },
+  { value: '7개', label: '진행 프로젝트 수' },
 ];
 
 // 히어로 기술 로고 클라우드 — TODO: 실제 사용 기술에 맞게 추가/삭제 (logos 는 src/assets/logos/index.js)

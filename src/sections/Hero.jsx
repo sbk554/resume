@@ -25,9 +25,9 @@ export default function Hero() {
             >
               프로젝트 보기
             </a>
-            <a className="btn btn--outline btn--large" href={profile.resumeUrl} target="_blank" rel="noreferrer">
+            {/* <a className="btn btn--outline btn--large" href="#print" onClick={(e) => {e.preventDefault(); window.print();}} rel="noreferrer">
               이력서 PDF
-            </a>
+            </a> */}
           </div>
         </div>
 
