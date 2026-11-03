@@ -26,7 +26,7 @@ export const projects = [
     thumbnail: logos.yeongjin, // TODO: 카드 썸네일 (16:10)
     tech: ['Java', 'Java Spring', 'MS-SQL'],
     detail: {
-      description: 'TODO: 어떤 서비스의 어떤 문제를 풀었는지 한 줄',
+      description: '교육 과정 수강신청부터 본인인증, 결제, 주차 등록 및 신청 이력 관리까지 통합 제공하는 교육 신청 시스템의 백엔드 개발 및 운영',
       cover: '', // TODO: 상세 대표 이미지 / GIF
       role: '백엔드 리드',
       // members: 'BE TODO · FE TODO',
@@ -37,8 +37,8 @@ export const projects = [
         { label: 'API 문서', url: '' },
       ],
       overview: [
-        'TODO: 배경 — 기존 시스템의 문제, 비즈니스 요구사항 (3~4문장)',
-        'TODO: 목표 — 정량 목표가 있다면 함께',
+        '교육 과정별 수강신청과 결제, 신청자 관리 등 교육 운영에 필요한 기능을 제공하는 웹 시스템을 개발했습니다. 본인인증 및 PG 결제 서비스를 연동하고, 사용자 신청 정보와 결제 내역을 안정적으로 처리할 수 있는 백엔드 구조를 구축했습니다.',
+        'Java Spring 기반 서버와 MS-SQL 데이터베이스를 활용하여 수강신청부터 결제 완료, 신청 이력 관리까지 이어지는 업무 처리 흐름을 구현하고, 실제 운영 환경에서 발생하는 요구사항을 지속적으로 반영하는 것을 목표로 했습니다.',
       ],
       techGroups: [
         { label: 'Backend', items: ['Java 8', 'Java Spring', 'JSP'] },
@@ -47,7 +47,7 @@ export const projects = [
       ],
       // TODO: 아키텍처 이미지가 있으면 architectureImage 에 경로 → 아래 flow 대신 이미지 출력
       architectureImage: '',
-      architecture: ['Client', 'Nginx', 'API Server ×2', ['MS-SQL']],
+      architecture: ['Client (Web Browser)', 'Java Spring / JSP (API Server on KT Cloud / Windows)', ['MS-SQL (Database)']],
       roles: [
         '본인인증 모듈 연동 및 요청 데이터 처리 로직 구현',
         'PG사 연동을 통한 결제 기능 개발 및 검증',
@@ -56,20 +56,24 @@ export const projects = [
       ],
       troubles: [
         {
-          title: 'TODO: 이슈 제목 (예: 주문 조회 N+1 쿼리)',
-          problem: 'TODO: 어떤 현상이 있었는지',
-          cause: 'TODO: 원인 분석 과정',
-          solution: 'TODO: 적용한 방법과 선택 이유',
-          result: 'TODO: before → after 수치',
+          title: '본인인증 및 PG 결제 연동 처리',
+          problem: '수강신청 과정에서 사용자 본인확인과 결제 처리가 필요했으며, 외부 인증 및 결제 서비스와 내부 신청 데이터 간 연계가 필요했습니다.',
+          cause: '외부 서비스에서 전달되는 인증 및 결제 결과를 내부 신청 정보와 연결하고, 요청 결과에 따라 신청 상태를 정확하게 관리해야 했습니다.',
+          solution: '본인인증 모듈과 PG사 연동 인터페이스를 구현하고, 외부 요청 및 응답 데이터를 처리하여 인증 결과와 결제 상태를 내부 시스템에 반영하도록 개발했습니다.',
+          result: '본인인증부터 결제까지 이어지는 수강신청 처리 흐름을 구현하여 사용자 신청 절차를 통합했습니다.',
         },
-        { title: 'TODO: 이슈 제목 2', problem: 'TODO', cause: 'TODO', solution: 'TODO', result: 'TODO' },
+        { title: '수강신청 이력 데이터 관리 및 조회 최적화', 
+          problem: '수강신청 정보와 사용자별 신청 이력을 체계적으로 저장하고 조회할 수 있는 데이터 처리 구조가 필요했습니다.', 
+          cause: '수강신청 데이터와 사용자 정보 간 관계를 고려한 데이터베이스 설계 및 조회 조건 최적화가 필요했습니다.', 
+          solution: 'MS-SQL 기반으로 신청 이력 관련 데이터 구조를 설계하고 SQL 쿼리를 구현 및 최적화하여 사용자별 신청 내역 조회 기능을 개발했습니다.', 
+          result: '수강신청 이력의 저장 및 조회 기능을 구현하고 데이터 관리와 조회 효율성을 개선했습니다.' },
       ],
       results: [
-        { value: 'TODO%', label: 'TODO: 평균 응답속도 개선' },
-        { value: 'TODO TPS', label: 'TODO: 부하 테스트 처리량' },
-        { value: 'TODO건', label: 'TODO: 장애 건수 / 비용 절감' },
+        { value: '통합 구현', label: '본인인증 및 PG 결제 연동' },
+        { value: '100%', label: '백엔드 개발 담당 기여도' },
+        { value: '지속 운영', label: '수강신청 시스템 유지보수 및 기능 개선' },
       ],
-      retrospective: 'TODO: 배운 점과 다음에 개선할 점 (2~3문장)',
+      retrospective: '수강신청부터 본인인증, 결제, 신청 이력 관리까지 서비스의 전체적인 백엔드 처리 흐름을 설계하고 구현하며 시스템 전반에 대한 이해도를 높였습니다. 특히 외부 인증 및 결제 서비스와 데이터베이스를 연계하면서 데이터 정합성과 안정적인 예외 처리가 중요하다는 점을 경험했으며, 실제 운영 환경에서 발생하는 요구사항을 반영하며 서비스 유지보수 역량을 강화하고 있습니다.',
     },
   },
   {
@@ -84,7 +88,7 @@ export const projects = [
     thumbnail: logos.mmate,
     tech: ['JAVA', 'Java Spring', 'ORACLE'],
     detail: {
-      description: 'TODO: 어떤 서비스의 어떤 문제를 풀었는지 한 줄',
+      description: '기존 기업용 솔루션의 기능적 한계를 개선하고, 사용자 요구사항에 맞춘 게시판 및 대회 접수·신청 관리 기능을 확장한 웹 서비스',
       cover: '', // TODO: 상세 대표 이미지 / GIF
       role: '백엔드 리드',
       // members: 'BE TODO · FE TODO',
@@ -95,8 +99,8 @@ export const projects = [
         { label: 'API 문서', url: '' },
       ],
       overview: [
-        'TODO: 배경 — 기존 시스템의 문제, 비즈니스 요구사항 (3~4문장)',
-        'TODO: 목표 — 정량 목표가 있다면 함께',
+        '기존 Mmate 솔루션의 지속적인 유지보수와 사용자 요구사항에 따른 신규 기능 개발을 진행했습니다. 게시판 내 투표 기능과 대회 접수 및 신청 관리 기능을 추가하여 기존 서비스의 활용 범위를 확장했습니다.',
+        'Java Spring 기반의 백엔드 구조를 유지하면서 Oracle 데이터베이스 모델을 설계하고, 신규 기능과 기존 시스템 간의 데이터 연계 및 서비스 안정성을 확보하는 것을 목표로 했습니다.',
       ],
       techGroups: [
         { label: 'Backend', items: ['Java 8', 'Java Spring', 'JSP'] },
@@ -105,7 +109,7 @@ export const projects = [
       ],
       // TODO: 아키텍처 이미지가 있으면 architectureImage 에 경로 → 아래 flow 대신 이미지 출력
       architectureImage: '',
-      architecture: ['Client', 'Nginx', 'API Server ×2', ['ORACLE']],
+      architecture: ['Client (Web Browser)', 'Java Spring / JSP (API Server on KT Cloud / Windows)', ['ORACLE (Database)']],
       roles: [
         '게시판 내 투표 기능 추가 및 관련 데이터 모델 설계',
         '대회 접수 및 신청 관리 기능 개발 (신청 상태, 접수 내역 확인 등 포함)',
@@ -113,20 +117,24 @@ export const projects = [
       ],
       troubles: [
         {
-          title: 'TODO: 이슈 제목 (예: 주문 조회 N+1 쿼리)',
-          problem: 'TODO: 어떤 현상이 있었는지',
-          cause: 'TODO: 원인 분석 과정',
-          solution: 'TODO: 적용한 방법과 선택 이유',
-          result: 'TODO: before → after 수치',
+          title: '게시판 투표 데이터 관리 및 집계 구조 설계',
+          problem: '게시글별 투표 항목과 사용자 투표 내역을 관리하고 투표 결과를 정확하게 집계할 수 있는 데이터 구조가 필요했습니다.',
+          cause: '게시글, 투표 항목, 사용자별 투표 내역 간 데이터 관계와 투표 결과 집계 기준을 명확하게 정의해야 했습니다.',
+          solution: 'Oracle 데이터베이스 기반으로 투표 관련 데이터 모델을 설계하고, 투표 등록 및 결과 조회를 위한 SQL 처리 로직을 구현했습니다.',
+          result: '게시판 내 투표 기능과 결과 조회 기능을 구현하여 기존 솔루션의 서비스 기능을 확장했습니다.',
         },
-        { title: 'TODO: 이슈 제목 2', problem: 'TODO', cause: 'TODO', solution: 'TODO', result: 'TODO' },
+        { title: '대회 접수 및 신청 상태 관리 기능 구현', 
+          problem: '대회 신청 정보와 신청 진행 상태를 체계적으로 관리하고 사용자가 접수 내역을 확인할 수 있는 기능이 필요했습니다.', 
+          cause: '신청 정보와 진행 상태에 따른 데이터 처리 및 화면별 조회 조건을 구분해야 했습니다.', 
+          solution: '대회 신청 데이터 모델을 구성하고 신청 상태 관리, 접수 내역 조회 및 관련 데이터 처리 로직을 개발했습니다.', 
+          result: '대회 접수부터 신청 내역 확인까지 이어지는 관리 기능을 구현하여 업무 처리 편의성을 개선했습니다.' },
       ],
       results: [
-        { value: 'TODO%', label: 'TODO: 평균 응답속도 개선' },
-        { value: 'TODO TPS', label: 'TODO: 부하 테스트 처리량' },
-        { value: 'TODO건', label: 'TODO: 장애 건수 / 비용 절감' },
+        { value: '신규 기능', label: '게시판 투표 기능 및 데이터 모델 구현' },
+        { value: '업무 자동화', label: '대회 접수 및 신청 관리 기능 개발' },
+        { value: '지속 개선', label: '기존 솔루션 유지보수 및 기능 고도화' },
       ],
-      retrospective: 'TODO: 배운 점과 다음에 개선할 점 (2~3문장)',
+      retrospective: '기존 시스템의 구조를 이해하고 새로운 기능을 추가하는 과정에서 기존 데이터와 신규 기능 간의 연계성을 고려하는 것이 중요하다는 점을 배웠습니다. 또한 사용자 요구사항을 데이터 모델과 서버 로직으로 구체화하는 경험을 통해 유지보수성과 확장성을 고려한 백엔드 개발 역량을 높였습니다.',
     },
   },
   {
@@ -139,9 +147,9 @@ export const projects = [
     period: '2023.01 ~ 2023.03',
     team: '7명(퍼블 2명, 프론트 1명 ,풀스택 4명)',
     thumbnail: logos.safety,
-    tech: ['Java', 'Java Spring', 'MYSQL', '전자정부프레임워크'],
+    tech: ['Java', 'Java Spring', 'MariaDB', '전자정부프레임워크'],
     detail: {
-      description: 'TODO: 어떤 서비스의 어떤 문제를 풀었는지 한 줄',
+      description: '체험 프로그램의 예약 편의성을 높이고 Instagram API를 활용한 SNS 콘텐츠 연동 및 관리자 예약 관리 기능을 제공하는 공공기관 웹 서비스',
       cover: '', // TODO: 상세 대표 이미지 / GIF
       role: '백엔드 리드',
       // members: 'BE TODO · FE TODO',
@@ -152,17 +160,17 @@ export const projects = [
         { label: 'API 문서', url: '' },
       ],
       overview: [
-        'TODO: 배경 — 기존 시스템의 문제, 비즈니스 요구사항 (3~4문장)',
-        'TODO: 목표 — 정량 목표가 있다면 함께',
+        '체험 프로그램 이용자의 예약 편의성을 높이기 위해 날짜별 예약 인원 관리와 중복 예약 방지 기능을 개발했습니다. 또한 관리자가 공휴일을 설정하면 해당 날짜의 예약을 차단할 수 있도록 예약 시스템과 관리자 기능을 연계했습니다.',
+        'Instagram API를 활용한 외부 SNS 피드 연동과 MariaDB 기반 데이터 관리 구조를 구현하여 사용자 편의성과 콘텐츠 접근성을 높이는 것을 목표로 했습니다.',
       ],
       techGroups: [
         { label: 'Backend', items: ['Java 8', 'Java Spring', 'JSP'] },
-        { label: 'Data', items: ['MySQL'] },
+        { label: 'Data', items: ['MariaDB'] },
         { label: 'Infra', items: ['Linux', 'SVN'] },
       ],
       // TODO: 아키텍처 이미지가 있으면 architectureImage 에 경로 → 아래 flow 대신 이미지 출력
       architectureImage: '',
-      architecture: ['Client', 'Nginx', 'API Server ×2', ['ORACLE']],
+      architecture: ['Client (Web Browser)', 'Java Spring / JSP (API Server on KT Cloud / Windows)', ['MariaDB (Database)']],
       roles: [
         'SNS 연동형 인스타그램 피드 실시간 동기화 기능 구현 (API 기반 연동)',
         '사용자 예약 편의를 위한 체험 예약 기능 개발 (날짜별 인원 제한, 중복 방지 처리 등 포함)',
@@ -171,20 +179,24 @@ export const projects = [
       ],
       troubles: [
         {
-          title: 'TODO: 이슈 제목 (예: 주문 조회 N+1 쿼리)',
-          problem: 'TODO: 어떤 현상이 있었는지',
-          cause: 'TODO: 원인 분석 과정',
-          solution: 'TODO: 적용한 방법과 선택 이유',
-          result: 'TODO: before → after 수치',
+          title: '날짜별 예약 인원 제한 및 중복 예약 방지',
+          problem: '동일한 날짜와 시간대에 예약 신청이 집중될 경우 예약 가능 인원을 초과하거나 중복 예약이 발생하지 않도록 처리해야 했습니다.',
+          cause: '예약 날짜와 시간대별 신청 현황을 기준으로 잔여 인원을 확인하고 중복 신청 여부를 검증하는 과정이 필요했습니다.',
+          solution: 'MariaDB 예약 데이터와 연계하여 날짜별 예약 인원 제한 및 중복 예약 검증 로직을 구현했습니다.',
+          result: '예약 가능 인원과 신청 내역을 기반으로 예약을 관리할 수 있는 체계를 구현했습니다.',
         },
-        { title: 'TODO: 이슈 제목 2', problem: 'TODO', cause: 'TODO', solution: 'TODO', result: 'TODO' },
+        { title: '관리자 공휴일 설정과 예약 차단 기능 연동', 
+          problem: '관리자가 공휴일을 등록했을 때 해당 날짜에 신규 예약이 접수되지 않도록 예약 기능과 연동해야 했습니다.', 
+          cause: '관리자 페이지의 공휴일 데이터와 사용자 예약 가능 날짜 사이의 연계 처리가 필요했습니다.', 
+          solution: '공휴일 설정 데이터를 데이터베이스에 저장하고 예약 가능 여부를 확인하는 서버 로직에 연동하여 예약 차단 기능을 구현했습니다.', 
+          result: '관리자가 등록한 공휴일을 예약 정책에 반영하여 예약 일정 관리의 편의성을 개선했습니다.' },
       ],
       results: [
-        { value: 'TODO%', label: 'TODO: 평균 응답속도 개선' },
-        { value: 'TODO TPS', label: 'TODO: 부하 테스트 처리량' },
-        { value: 'TODO건', label: 'TODO: 장애 건수 / 비용 절감' },
+        { value: '예약 관리', label: '날짜별 예약 인원 제한 및 중복 방지 구현' },
+        { value: '관리자 기능', label: '공휴일 설정과 예약 차단 기능 연동' },
+        { value: '외부 API', label: 'Instagram 피드 연동 및 데이터 동기화' },
       ],
-      retrospective: 'TODO: 배운 점과 다음에 개선할 점 (2~3문장)',
+      retrospective: '예약 시스템 개발을 통해 날짜별 인원 제한과 중복 신청 방지 등 데이터 정합성을 고려한 서버 로직 설계의 중요성을 경험했습니다. 또한 관리자 설정과 사용자 예약 기능을 연계하고 외부 API를 활용하면서 여러 시스템 간 데이터 흐름을 설계하고 구현하는 역량을 높였습니다.',
     },
   },
   {
@@ -197,9 +209,9 @@ export const projects = [
     period: '2023.07 ~ 2023.10',
     team: '6명(퍼블 2명 ,백엔드 1명 ,풀스택 3명)',
     thumbnail: logos.building,
-    tech: ['JAVA', 'Java Spring', 'MySQL'],
+    tech: ['JAVA', 'Java Spring', 'MariaDB'],
     detail: {
-      description: 'TODO: 어떤 서비스의 어떤 문제를 풀었는지 한 줄',
+      description: '건축사의 업무 효율성을 높이기 위해 게시판, 자재 정보 및 표준계약서 관리 기능을 제공하는 업무지원 웹 시스템',
       cover: '', // TODO: 상세 대표 이미지 / GIF
       role: '백엔드 리드',
       // members: 'BE TODO · FE TODO',
@@ -210,17 +222,17 @@ export const projects = [
         { label: 'API 문서', url: '' },
       ],
       overview: [
-        'TODO: 배경 — 기존 시스템의 문제, 비즈니스 요구사항 (3~4문장)',
-        'TODO: 목표 — 정량 목표가 있다면 함께',
+        '건축사 업무에 필요한 게시판, 자재 정보 및 표준계약서 관리 기능을 제공하는 업무지원 시스템 개발에 참여했습니다. 각 업무 모듈에서 사용하는 데이터를 체계적으로 관리하고 기존 JSP 페이지와 서버 간 원활한 데이터 연동이 필요했습니다.',
+        'MariaDB 기반 데이터베이스 설계 및 구축과 Java Spring 기반 백엔드 기능 개발을 통해 업무별 데이터 관리 체계를 마련하고, 사용자 요청에 따른 데이터 조회 및 처리 기능을 제공하는 것을 목표로 했습니다.',
       ],
       techGroups: [
         { label: 'Backend', items: ['Java 8', 'Java Spring', 'JSP'] },
-        { label: 'Data', items: ['MySQL'] },
+        { label: 'Data', items: ['MariaDB'] },
         { label: 'Infra', items: ['Linux', 'SVN'] },
       ],
       // TODO: 아키텍처 이미지가 있으면 architectureImage 에 경로 → 아래 flow 대신 이미지 출력
       architectureImage: '',
-      architecture: ['Client', 'Nginx', 'API Server ×2', ['ORACLE']],
+      architecture: ['Client (Web Browser)', 'Java Spring / JSP (API Server on KT Cloud / Windows)', ['MariaDB (Database)']],
       roles: [
         '데이터베이스 설계 및 구축 담당 (MySQL 기반 ERD 구성 및 테이블 생성)',
         '게시판, 자재 정보 시스템, 표준계약서 관리 기능 등 주요 모듈 개발',
@@ -228,20 +240,24 @@ export const projects = [
       ],
       troubles: [
         {
-          title: 'TODO: 이슈 제목 (예: 주문 조회 N+1 쿼리)',
-          problem: 'TODO: 어떤 현상이 있었는지',
-          cause: 'TODO: 원인 분석 과정',
-          solution: 'TODO: 적용한 방법과 선택 이유',
-          result: 'TODO: before → after 수치',
+          title: '업무 모듈별 데이터베이스 구조 설계',
+          problem: '게시판, 자재 정보, 표준계약서 등 서로 다른 업무 영역의 데이터를 효율적으로 관리할 수 있는 데이터베이스 구조가 필요했습니다.',
+          cause: '각 업무 모듈의 데이터 특성과 조회 및 관리 방식이 달라 테이블 구조와 데이터 관계를 명확하게 정의해야 했습니다.',
+          solution: 'MySQL 기반 ERD를 작성하고 업무별 테이블 구조를 설계 및 구축하여 데이터 관리 체계를 구성했습니다.',
+          result: '업무 모듈별 데이터 구조를 정립하고 각 기능에서 활용할 수 있는 데이터베이스 기반을 마련했습니다.',
         },
-        { title: 'TODO: 이슈 제목 2', problem: 'TODO', cause: 'TODO', solution: 'TODO', result: 'TODO' },
+        { title: 'JSP 페이지와 백엔드 API 간 데이터 연동', 
+          problem: '게시판과 자재 정보 및 표준계약서 관리 화면에서 필요한 데이터를 서버와 연동하여 조회하고 처리할 수 있어야 했습니다.', 
+          cause: '화면별 요청 데이터와 데이터베이스 처리 결과를 일관된 방식으로 연결하는 서버 처리 로직이 필요했습니다.', 
+          solution: 'Java Spring 기반 RESTful API와 SQL 쿼리를 구현하고 JSP 페이지와 연계하여 업무별 데이터 조회 및 처리 기능을 개발했습니다.', 
+          result: '각 업무 화면에서 필요한 데이터를 서버와 연동하여 조회하고 관리할 수 있는 기능을 구현했습니다.' },
       ],
       results: [
-        { value: 'TODO%', label: 'TODO: 평균 응답속도 개선' },
-        { value: 'TODO TPS', label: 'TODO: 부하 테스트 처리량' },
-        { value: 'TODO건', label: 'TODO: 장애 건수 / 비용 절감' },
+        { value: 'DB 설계', label: 'ERD 작성 및 데이터베이스 구축' },
+        { value: '업무 시스템', label: '게시판·자재 정보·표준계약서 관리 기능 개발' },
+        { value: 'API 개발', label: 'JSP 연동 RESTful API 및 SQL 구현' },
       ],
-      retrospective: 'TODO: 배운 점과 다음에 개선할 점 (2~3문장)',
+      retrospective: '업무지원 시스템의 데이터베이스를 직접 설계하고 구축하면서 업무 요구사항을 데이터 구조로 구체화하는 경험을 쌓았습니다. 또한 여러 업무 모듈의 API와 SQL을 구현하며 데이터 처리 흐름과 화면 간 연계 구조를 이해하고 유지보수성을 고려한 백엔드 개발 역량을 강화했습니다.',
     },
   },
 ];

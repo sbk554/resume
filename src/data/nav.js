@@ -4,5 +4,5 @@ export const navItems = [
   { id: 'skills', label: 'Skills', ko: '기술스택' },
   { id: 'experience', label: 'Experience', ko: '경력' },
   { id: 'projects', label: 'Projects', ko: '포트폴리오' },
-  { id: 'education', label: 'Education', ko: '교육' },
+  { id: 'history', label: 'History', ko: '연혁' },
 ];
