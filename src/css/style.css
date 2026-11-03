@@ -115,6 +115,7 @@ body.is-locked { overflow: hidden; }
 .about__strengths { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); margin-top: var(--space-xs); }
 .strength { display: flex; flex-direction: column; gap: var(--space-xs); }
 .strength .icon-tile { background: var(--color-accent-soft); color: var(--color-accent); }
+.strength .strength__text p + p { margin-top: var(--space-xxs);}
 
 @media (max-width: 768px) {
   .about__photo { flex-basis: 100%; aspect-ratio: 1 / 1; }
